@@ -137,3 +137,45 @@ python main.py
 * pandas Documentation
 * scikit-learn Documentation
 # kaggle_titanic
+
+
+---
+
+## 改善ログ（更新）
+
+### 追加した特徴量
+- Embarked（乗船港）を追加
+- FamilySize（SibSp + Parch + 1）を追加
+
+### 欠損値処理の改善
+- Age：中央値で補完
+- Fare：中央値で補完（testデータ）
+- Embarked：最頻値で補完
+
+### モデル改善
+- RandomForestClassifierのパラメータを調整
+  - n_estimators = 200
+  - max_depth = 5
+  - random_state = 42
+
+### 評価方法
+- train_test_splitによるホールドアウト検証を実施
+- accuracy_scoreで精度評価
+
+### 最新スコア
+- Kaggle Public Score: **0.78708**
+
+### 学んだこと
+- 特徴量エンジニアリングの重要性
+- 欠損値処理の影響
+- 過学習と汎化性能の関係
+- Random Forestの挙動理解
+- train/test分割と評価の意味
+
+---
+
+## 今後の改善予定
+- NameからTitle（Mr, Mrs, Missなど）の抽出
+- モデルのハイパーパラメータ調整
+- Cross Validationの導入
+- 特徴量の重要度分析による最適化
